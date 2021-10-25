@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>Curso JavaScript</title>
+		<meta charset="utf-8">
+
+    </head>
+    <body>
+        <h1>Calculo IMC</h1>
+
+        <label for="txtNome">Digite seu nome:</label>
+        <input type="text" id="txtNome" value="">
+        <button onclick="escreve()">Enviar</button>
+        <div id="msg"></div>
+
+        <br>
+
+        <label for="txtPeso">Digite seu peso: </label>
+        <input type="text" id="txtPeso" value="">
+        <button onclick="pess()">Enviar</button>
+        <div id="msg2"></div>
+
+        <br>
+
+        <label for="txtAltura">Digite sua altura:</label>
+        <input type="text" id="txtAltura" value="">
+        <button onclick="pes()">Enviar</button>
+        <div id="msg3"></div>
+
+        <script>
+
+                var txtNome = document.querySelector('#txtNome');
+                function escreve(){
+                    var nome = txtNome.value;
+                    document.querySelector('#msg').innerHTML = "Bem-vindo, <b>"
+                    + nome + "<b>";
+                }
+                var txtPeso = document.querySelector('#txtPeso');
+                function pess(){
+                    var peso = txtPeso.value;
+                    document.querySelector('#msg2').innerHTML = "Seu peso é: <b>"
+                        + peso + "<b>";
+                }
+                
+                /* console.log("Peso: ", peso); */ 
+
+
+                var txtAltura = document.querySelector('#txtAltura');
+                function pes(){
+                    var altura = txtAltura.value;
+                    document.querySelector('#msg3').innerHTML = "Sua altura é: <br>"
+                    + altura + "<br>";
+
+                }
+                console.log("Altura: ", altura);
+
+                var imc = calcularIMC(peso, altura);
+                var classificacao = classificaIMC(imc);
+
+
+                console.log('Classificação IMC: ', classificacao);
+
+                (function(){
+                function calcularIMC(peso, altura){
+
+                    return peso / (altura * altura);
+                }
+                
+                function classificaIMC (imc){
+
+                    if(imc <= 16.9){
+                        return 'Muito abaixo do peso';
+                    } else if(imc <= 18.4){
+                        return 'Abaixo do peso';
+                    } else if(imc <= 24.9){
+                        return 'Normal';
+                    } else if(imc <= 29.9){
+                        return 'Acima do peso';
+                    } else if(imc <= 34.9){
+                        return 'Obesidade grau 1'
+                    } else if (imc <= 40){
+                        return 'Obesidade grau 2';
+                    } else {
+                        return 'Obesidade grau 3';
+                    }
+                    
+
+        </script>
+        </body>
+</html>

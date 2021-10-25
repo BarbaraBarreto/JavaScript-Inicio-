@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>Curso JavaScript</title>
+		<meta charset="utf-8">
+
+        <script>
+            (function(){
+                function calcularIMC(peso, altura){
+
+                    return peso / (altura * altura);
+                }
+                
+                function classificaIMC (imc){
+
+                    if(imc <= 16.9){
+                        return 'Muito abaixo do peso';
+                    } else if(imc <= 18.4){
+                        return 'Abaixo do peso';
+                    } else if(imc <= 24.9){
+                        return 'Normal';
+                    } else if(imc <= 29.9){
+                        return 'Acima do peso';
+                    } else if(imc <= 34.9){
+                        return 'Obesidade grau 1'
+                    } else if (imc <= 40){
+                        return 'Obesidade grau 2';
+                    } else {
+                        return 'Obesidade grau 3';
+                    }
+                    
+                }
+
+                var nome = prompt("Qual é seu nome?");
+                console.log("Nome: ", nome);
+                var peso = prompt("Qual é o seu peso?");
+                console.log("Peso: ", peso);
+                var altura = prompt("Qual é a sua altura?");
+                console.log("Altura: ", altura);
+
+                var imc = calcularIMC(peso, altura);
+                var classificacao = classificaIMC(imc);
+
+
+                console.log('Classificação IMC: ', classificacao);
+
+            })()
+
+        </script>
+
+	</head>
+
+	<body>
+		<h1>Curso JavaScript</h1>
+	</body>
+
+</html>
